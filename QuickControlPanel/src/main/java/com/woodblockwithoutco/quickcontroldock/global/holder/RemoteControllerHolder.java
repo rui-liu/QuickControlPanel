@@ -16,16 +16,16 @@
 package com.woodblockwithoutco.quickcontroldock.global.holder;
 
 import com.woodblockwithoutco.quickcontroldock.global.app.GlobalApplication;
-import com.woodblockwithoutco.remotecontroller.RemoteController;
+//import com.woodblockwithoutco.remotecontroller.RemoteController;
 
 public class RemoteControllerHolder {
 
-	private static RemoteController sInstance;
-	
-	public static synchronized RemoteController getInstance() {
-		if(sInstance == null) {
-			sInstance = new RemoteController(GlobalApplication.getGlobalContext());
-		}
-		return sInstance;
-	}
+//	private static RemoteController sInstance;
+//
+//	public static synchronized RemoteController getInstance() {
+//		if(sInstance == null) {
+//			sInstance = new RemoteController(GlobalApplication.getGlobalContext());
+//		}
+//		return sInstance;
+//	}
 }

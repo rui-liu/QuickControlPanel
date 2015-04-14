@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.woodblockwithoutco.quickcontroldock"
@@ -22,9 +22,10 @@ android {
 }
 
 dependencies {
-    compile project(':colorPickerView')
-    compile project(':dragSortListView')
-    compile project(':remoteController')
+    //compile project(':colorPickerView')
+    //compile project(':dragSortListView')
+    //compile project(':remoteController')
+    compile 'asia.ivity.android:drag-sort-listview:1.0'
     compile files('libs/acra-4.5.0.jar')
     compile 'com.android.support:support-v4:21.+'
 }

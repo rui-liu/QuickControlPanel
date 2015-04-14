@@ -1,4 +1,1 @@
-include ':QuickControlPanel', 'colorPickerView'
-include ':dragSortListView'
-include ':remoteControllerSharedCode'
-include ':remoteController'
+include ':QuickControlPanel'

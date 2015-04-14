@@ -33,9 +33,9 @@ public abstract class BaseMediaDualStateButton extends BaseMediaButton {
 		super(context, attrs, defStyle);
 	}
 	
-	public void setDrawableStateToFirst() {
-		setImageDrawable(getMediaDrawable());
-	}
+//	public void setDrawableStateToFirst() {
+//		setImageDrawable(getMediaDrawable());
+//	}
 	
 	public void setDrawableStateToSecond() {
 		setImageDrawable(getSecondMediaDrawable());

@@ -21,7 +21,7 @@ import android.util.AttributeSet;
 
 import com.woodblockwithoutco.quickcontroldock.model.buttons.BaseMediaDualStateButton;
 import com.woodblockwithoutco.quickcontroldock.resource.Res;
-import com.woodblockwithoutco.remotecontroller.MediaCommand;
+//import com.woodblockwithoutco.remotecontroller.MediaCommand;
 
 public class PlayPauseButton extends BaseMediaDualStateButton {
 
@@ -43,15 +43,15 @@ public class PlayPauseButton extends BaseMediaDualStateButton {
 		return Res.drawable.play_song;
 	}
 
-	@Override
+//	@Override
 	protected Drawable getMediaDrawable() {
 		return Res.drawable.pause_song;
 	}
 
-	@Override
-	protected MediaCommand getMediaCommand() {
-		return MediaCommand.PLAY_PAUSE;
-	}
+//	@Override
+//	protected MediaCommand getMediaCommand() {
+//		return MediaCommand.PLAY_PAUSE;
+//	}
 	
 	@Override
 	protected boolean isMasterButton() {

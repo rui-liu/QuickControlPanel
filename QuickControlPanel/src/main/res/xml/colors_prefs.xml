@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:colorpicker="http://schemas.android.com/apk/res-auto" >
     
-    <PreferenceCategory android:title="@string/colors_themes">
+    <!--PreferenceCategory android:title="@string/colors_themes">
         <Preference
             android:key="color_apply_white_theme"
             android:title="@string/colors_apply_white_theme"/>
@@ -102,6 +102,6 @@
             android:defaultValue="0xFF000000"
             android:key="colors_text"
             android:title="@string/colors_text_color" />
-    </PreferenceCategory>
+    </PreferenceCategory-->
 
 </PreferenceScreen>

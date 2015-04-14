@@ -21,7 +21,7 @@ import android.util.AttributeSet;
 
 import com.woodblockwithoutco.quickcontroldock.model.buttons.BaseMediaButton;
 import com.woodblockwithoutco.quickcontroldock.resource.Res;
-import com.woodblockwithoutco.remotecontroller.MediaCommand;
+//import com.woodblockwithoutco.remotecontroller.MediaCommand;
 
 public class PreviousButton extends BaseMediaButton {
 
@@ -37,14 +37,14 @@ public class PreviousButton extends BaseMediaButton {
 		super(context, attrs, defStyle);
 	}
 
-	@Override
+//	@Override
 	protected Drawable getMediaDrawable() {
 		return Res.drawable.previous_button;
 	}
 
-	@Override
-	protected MediaCommand getMediaCommand() {
-		return MediaCommand.PREVIOUS;
-	}
+//	@Override
+//	protected MediaCommand getMediaCommand() {
+//		return MediaCommand.PREVIOUS;
+//	}
 
 }

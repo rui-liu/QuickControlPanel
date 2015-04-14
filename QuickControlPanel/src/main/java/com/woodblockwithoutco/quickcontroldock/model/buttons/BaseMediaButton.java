@@ -15,8 +15,8 @@
  *******************************************************************************/
 package com.woodblockwithoutco.quickcontroldock.model.buttons;
 
-import com.woodblockwithoutco.remotecontroller.MediaCommand;
-import com.woodblockwithoutco.remotecontroller.RemoteController;
+//import com.woodblockwithoutco.remotecontroller.MediaCommand;
+//import com.woodblockwithoutco.remotecontroller.RemoteController;
 import com.woodblockwithoutco.quickcontroldock.global.event.VisibilityEventNotifier;
 import com.woodblockwithoutco.quickcontroldock.global.event.VisibilityEventNotifier.OnVisibilityEventListener;
 import com.woodblockwithoutco.quickcontroldock.global.holder.RemoteControllerHolder;
@@ -37,7 +37,7 @@ public abstract class BaseMediaButton extends ImageView implements OnClickListen
 
 	private static final String TAG = "BaseMediaButtonRemoteController";
 
-	private RemoteController mRemoteController;
+//	private RemoteController mRemoteController;
 
 	private boolean mUseBroadcastClick = true;
 
@@ -57,13 +57,13 @@ public abstract class BaseMediaButton extends ImageView implements OnClickListen
 		super(context, attrs, defStyle);
 		mPressedColor = ColorsResolver.getPressedColor(getContext());
 		setClickable(true);
-		setImageDrawable(getMediaDrawable());
+//		setImageDrawable(getMediaDrawable());
 		setOnClickListener(this);
 		mUseBroadcastClick  = MusicResolver.useBroadcastClick(getContext());
 		if(mUseBroadcastClick) {
 			mDefaultPlayerIntent = MusicResolver.getDefaultPlayerIntent(getContext());
 		}
-		mRemoteController = RemoteControllerHolder.getInstance();
+//		mRemoteController = RemoteControllerHolder.getInstance();
 		VisibilityEventNotifier.getInstance().registerListener(this);
 	}
 
@@ -79,66 +79,66 @@ public abstract class BaseMediaButton extends ImageView implements OnClickListen
 
 	@Override
 	public void onClick(View v) {
-
-		boolean clickSent = mRemoteController.sendMediaCommand(getMediaCommand());
-		boolean remoteControllerRegistered = mRemoteController.isRegistered();
-		boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
-
-		if(isKitKat) {
-			//���������, ������� �� MusicControlService
-			if(remoteControllerRegistered) {
-				if(!clickSent) {
-					//��� ����������������, ������ ��� ��������� ������
-					if(mUseBroadcastClick) {
-						//�������� ��������� ������
-						if(mDefaultPlayerIntent != null) {
-							mRemoteController.sendBroadcastMediaCommand(getMediaCommand(), mDefaultPlayerIntent);
-						} else {
-							mRemoteController.sendBroadcastMediaCommand(getMediaCommand());
-						}
-					}
-				}
-			}
-		} else {
-			if(remoteControllerRegistered) {
-				if(!clickSent) {
-					if(mUseBroadcastClick) {
-						if(mDefaultPlayerIntent != null) {
-							mRemoteController.sendBroadcastMediaCommand(getMediaCommand(), mDefaultPlayerIntent);
-						} else {
-							mRemoteController.sendBroadcastMediaCommand(getMediaCommand());
-						}
-					}
-				}
-			} else {
-				Log.e(TAG, "Invalid RemoteController state - it should be registered, but it's not.");
-			}
-		}
+//
+//		boolean clickSent = mRemoteController.sendMediaCommand(getMediaCommand());
+//		boolean remoteControllerRegistered = mRemoteController.isRegistered();
+//		boolean isKitKat = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+//
+//		if(isKitKat) {
+//			//���������, ������� �� MusicControlService
+//			if(remoteControllerRegistered) {
+//				if(!clickSent) {
+//					//��� ����������������, ������ ��� ��������� ������
+//					if(mUseBroadcastClick) {
+//						//�������� ��������� ������
+//						if(mDefaultPlayerIntent != null) {
+//							mRemoteController.sendBroadcastMediaCommand(getMediaCommand(), mDefaultPlayerIntent);
+//						} else {
+//							mRemoteController.sendBroadcastMediaCommand(getMediaCommand());
+//						}
+//					}
+//				}
+//			}
+//		} else {
+//			if(remoteControllerRegistered) {
+//				if(!clickSent) {
+//					if(mUseBroadcastClick) {
+//						if(mDefaultPlayerIntent != null) {
+//							mRemoteController.sendBroadcastMediaCommand(getMediaCommand(), mDefaultPlayerIntent);
+//						} else {
+//							mRemoteController.sendBroadcastMediaCommand(getMediaCommand());
+//						}
+//					}
+//				}
+//			} else {
+//				Log.e(TAG, "Invalid RemoteController state - it should be registered, but it's not.");
+//			}
+//		}
 	}
 
-	protected abstract Drawable getMediaDrawable();
-	protected abstract MediaCommand getMediaCommand();
+//	protected abstract Drawable getMediaDrawable();
+//	protected abstract MediaCommand getMediaCommand();
 
 	@Override
 	public void onShow() {
-		if(isMasterButton()) {
-			if(mRemoteController != null && !mRemoteController.isRegistered()) {
-				if(MusicResolver.isArtworkEnabled(getContext())) {
-					int size = MusicResolver.getArtworkSize(getContext());
-					mRemoteController.registerRemoteControls(size, size);
-				} else {
-					mRemoteController.registerRemoteControls();
-				}
-				mRemoteController.setSynchronizationEnabled(true);
-			}
-		}
+//		if(isMasterButton()) {
+//			if(mRemoteController != null && !mRemoteController.isRegistered()) {
+//				if(MusicResolver.isArtworkEnabled(getContext())) {
+//					int size = MusicResolver.getArtworkSize(getContext());
+//					mRemoteController.registerRemoteControls(size, size);
+//				} else {
+//					mRemoteController.registerRemoteControls();
+//				}
+//				mRemoteController.setSynchronizationEnabled(true);
+//			}
+//		}
 	}
 
 	@Override
 	public void onHide() {
-		if(isMasterButton()) {
-			mRemoteController.unregisterRemoteControls();
-		}
+//		if(isMasterButton()) {
+//			mRemoteController.unregisterRemoteControls();
+//		}
 	}
 
 	//���������� true, ���� ��� ������ �������� "��������"-�������� �� RemoteController

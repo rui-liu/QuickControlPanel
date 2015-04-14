@@ -25,14 +25,14 @@ import android.widget.TextView;
 
 import com.woodblockwithoutco.quickcontroldock.global.holder.RemoteControllerHolder;
 import com.woodblockwithoutco.quickcontroldock.model.action.SeekBarAction;
-import com.woodblockwithoutco.remotecontroller.RemoteController;
+//import com.woodblockwithoutco.remotecontroller.RemoteController;
 
 public class ScrubberAction implements SeekBarAction {
 	
 	private int mDuration = 0;
 	private static final long ONE_SECOND_DELAY = 1000;
 	private static final long SEEK_DELAY = 30;
-	private RemoteController mRemoteController;
+//	private RemoteController mRemoteController;
 	private TextView mCurrentPositionTextView;
 	private TextView mDurationTextView;
 	private Handler mHandler;
@@ -54,7 +54,7 @@ public class ScrubberAction implements SeekBarAction {
 		
 		mHandler = new Handler();
 		
-		mRemoteController = RemoteControllerHolder.getInstance();
+//		mRemoteController = RemoteControllerHolder.getInstance();
 		mPosSeekBar = sb;
 		
 		String skeleton = "";
@@ -100,7 +100,7 @@ public class ScrubberAction implements SeekBarAction {
 
 	@Override
 	public int getCurrentValue() {
-		return (int) (mRemoteController.getPosition() / 1000);
+		return 0;
 	}
 	
 	public void setDuration(long duration) {
@@ -136,7 +136,7 @@ public class ScrubberAction implements SeekBarAction {
 
 		@Override
 		public void run() {
-			mRemoteController.seekTo(mProgress * 1000);
+//			mRemoteController.seekTo(mProgress * 1000);
 			mCurrentPositionTextView.setText(mFormat.format(mProgress * 1000));
 		}
 		
