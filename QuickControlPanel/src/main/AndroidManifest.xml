@@ -128,7 +128,7 @@
                 android:resource="@drawable/assist_button" />
         </activity>
 
-        <service
+        <!--service
             android:name="com.woodblockwithoutco.remotecontroller.impl.MusicControlService"
             android:label="@string/service_name"
             android:enabled="@bool/music_service_enabled"
@@ -136,7 +136,7 @@
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
-        </service>
+        </service-->
         <service
             android:name="com.woodblockwithoutco.quickcontroldock.notification.QcpNotificationListenerService"
             android:label="@string/notification_service_name"
